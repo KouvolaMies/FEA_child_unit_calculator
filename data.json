@@ -1,0 +1,96 @@
+{
+    "gen1": {
+        "chrom": {
+            "growths":{
+                "hp": 45,
+                "str": 40,
+                "mag": 10,
+                "skl": 40,
+                "spd": 40,
+                "lck": 70,
+                "def": 35,
+                "res": 20
+            }
+        },
+        "robin": {
+            "growths":{
+                "hp": 40,
+                "str": 40,
+                "mag": 35,
+                "skl": 35,
+                "spd": 35,
+                "lck": 55,
+                "def": 30,
+                "res": 20
+            }
+        },
+        "sully": {
+            "growths":{
+                "hp": 40,
+                "str": 35,
+                "mag": 20,
+                "skl": 40,
+                "spd": 40,
+                "lck": 60,
+                "def": 35,
+                "res": 20
+            }
+        }
+    },
+    "gen2": {
+        "lucina": {
+            "growths":{
+                "hp": 45,
+                "str": 35,
+                "mag": 20,
+                "skl": 45,
+                "spd": 45,
+                "lck": 80,
+                "def": 25,
+                "res": 25
+            },
+            "parent": "chrom",
+            "class": "lord"
+        },
+        "kjelle": {
+            "growths":{
+                "hp": 40,
+                "str": 35,
+                "mag": 25,
+                "skl": 40,
+                "spd": 45,
+                "lck": 55,
+                "def": 40,
+                "res": 20
+            },
+            "parent": "sully",
+            "class": "knight"
+        }
+    },
+    "classes":{
+        "lord": {
+            "growths":{
+                "hp": 40,
+                "str": 20,
+                "mag": 0,
+                "skl": 20,
+                "spd": 20,
+                "lck": 0,
+                "def": 10,
+                "res": 5
+            }
+        },
+        "knight": {
+            "growths":{
+                "hp": 50,
+                "str": 25,
+                "mag": 0,
+                "skl": 15,
+                "spd": 10,
+                "lck": 0,
+                "def": 15,
+                "res": 5
+            }
+        }
+    }
+}

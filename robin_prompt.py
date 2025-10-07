@@ -1,82 +1,4 @@
-import math
-chrom = {
-    "hp": 45,
-    "str": 40,
-    "mag": 10,
-    "skl": 40,
-    "spd": 40,
-    "lck": 70,
-    "def": 35,
-    "res": 20
-}
-robin = {
-    "hp": 40,
-    "str": 40,
-    "mag": 35,
-    "skl": 35,
-    "spd": 35,
-    "lck": 55,
-    "def": 30,
-    "res": 20
-}
-sully = {
-    "hp": 40,
-    "str": 35,
-    "mag": 20,
-    "skl": 40,
-    "spd": 40,
-    "lck": 60,
-    "def": 35,
-    "res": 20
-}
-lucina = {
-    "hp": 45,
-    "str": 35,
-    "mag": 20,
-    "skl": 45,
-    "spd": 45,
-    "lck": 80,
-    "def": 25,
-    "res": 25
-}
-lord = {
-    "hp": 40,
-    "str": 20,
-    "mag": 0,
-    "skl": 20,
-    "spd": 20,
-    "lck": 0,
-    "def": 10,
-    "res": 5
-}
-result = {
-    "hp": 0,
-    "str": 0,
-    "mag": 0,
-    "skl": 0,
-    "spd": 0,
-    "lck": 0,
-    "def": 0,
-    "res": 0
-}
-
-for stat in result:
-    result[stat] = ((chrom[stat] + sully[stat] + lucina[stat]) / 3) + lord[stat]
-
-for stat in result:
-    print(stat + ": " + str(math.floor(result[stat])))
-
-def RobinPrompt():
-    #reset robin's stats
-    robin["hp"] = 40
-    robin["str"] = 40
-    robin["mag"] = 35
-    robin["skl"] = 35
-    robin["spd"] = 35
-    robin["lck"] = 55
-    robin["def"] = 30
-    robin["res"] = 20
-
+def RobinPrompt(robin):
     asset = input("choose robin's asset: | 1: HP |  2: STR | 3: MAG | 4: SKL | 5: SPD | 6: LCK | 7: DEF | 8: RES |\n")
     running = 1
     while running == 1:
@@ -96,7 +18,7 @@ def RobinPrompt():
             robin["res"] += 5
             running = 0
         elif asset == "4":
-            robin["str"] += 15
+            robin["skl"] += 15
             robin["str"] += 5
             robin["def"] += 5
             running = 0
@@ -144,7 +66,7 @@ def RobinPrompt():
             robin["res"] -= 5
             running = 0
         elif flaw == "4":
-            robin["str"] -= 10
+            robin["skl"] -= 10
             robin["str"] -= 5
             robin["def"] -= 5
             running = 0
@@ -170,14 +92,4 @@ def RobinPrompt():
             running = 0
         else:
             flaw = input("please choose a number between 1 and 8: | 1: HP |  2: STR | 3: MAG | 4: SKL | 5: SPD | 6: LCK | 7: DEF | 8: RES |\n")
-
-RobinPrompt()
-
-for stat in result:
-    result[stat] = ((chrom[stat] + robin[stat] + lucina[stat]) / 3) + lord[stat]
-
-for stat in result:
-    print(stat + ": " + str(math.floor(result[stat])))
-
-for stat in result:
-    print(stat + ": " + str(math.floor(robin[stat])))
+    return robin
