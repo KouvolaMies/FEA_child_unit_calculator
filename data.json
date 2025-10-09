@@ -50,7 +50,7 @@
                 "res": 25
             },
             "parent": "chrom",
-            "class": "lord"
+            "classes": ["lord", "cavalier"]
         },
         "kjelle": {
             "growths":{
@@ -64,7 +64,21 @@
                 "res": 20
             },
             "parent": "sully",
-            "class": "knight"
+            "classes": ["knight", "cavalier"]
+        },
+        "morgan": {
+            "growths":{
+                "hp": 35,
+                "str": 35,
+                "mag": 40,
+                "skl": 40,
+                "spd": 40,
+                "lck": 50,
+                "def": 25,
+                "res": 25
+            },
+            "parent": "robin",
+            "classes": ["knight", "cavalier"]
         }
     },
     "classes":{
@@ -89,6 +103,18 @@
                 "spd": 10,
                 "lck": 0,
                 "def": 15,
+                "res": 5
+            }
+        },
+        "cavalier": {
+            "growths":{
+                "hp": 45,
+                "str": 20,
+                "mag": 0,
+                "skl": 20,
+                "spd": 20,
+                "lck": 0,
+                "def": 10,
                 "res": 5
             }
         }

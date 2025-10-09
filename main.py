@@ -29,8 +29,10 @@ def ChildPrompt():
     elif parent2 == data["gen1"]["robin"]:
         parent2["growths"] = robin_prompt.RobinPrompt(parent2["growths"])
     
+    child_class = input("Choose the child unit's class:\n")
+    
     for stat in result:
-        result[stat] = ((child["growths"][stat] + parent1["growths"][stat] + parent2["growths"][stat]) / 3) + data["classes"][child["class"]]["growths"][stat]
+        result[stat] = ((child["growths"][stat] + parent1["growths"][stat] + parent2["growths"][stat]) / 3) + data["classes"][child_class]["growths"][stat]
 
 ChildPrompt()
 
