@@ -18,22 +18,34 @@ result = {
 }
 
 def ChildPrompt():
-    child = input("Choose a child unit:\n")
-    child = data["gen2"][child]
+    child = input("Choose a child unit: ")
+    running = True
+    while running:
+        if child not in data["gen2"]:
+            child = input(child + " is not a child unit, please try again: ")
+        else:
+            child = data["gen2"][child]
+            running = False
     parent1 = data["gen1"][child["parent"]]
-    parent2 = input("Choose a parent:\n")
-    parent2 = data["gen1"][parent2]
+    parent2 = input("Choose a parent: ")
+    running = True
+    while running:
+        if parent2 not in parent1["partners"]:
+            parent2 = input(parent2 + " is not a compatible parent, please try again: ")
+        else:
+            parent2 = data["gen1"][parent2]
+            running = False
 
     if parent1 == data["gen1"]["robin"]:
         parent1["growths"] = robin_prompt.RobinPrompt(parent1["growths"])
     elif parent2 == data["gen1"]["robin"]:
         parent2["growths"] = robin_prompt.RobinPrompt(parent2["growths"])
     
-    child_class = input("Choose the child unit's class:\n")
+    child_class = input("Choose the child unit's class: ")
     running = True
     while running:
         if child_class not in child["classes"]:
-            child_class = input("Please choose a compatible class:\n")
+            child_class = input(child_class + " is not a compatible class, please try again: ")
         else:
             running = False
     

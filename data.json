@@ -10,7 +10,8 @@
                 "lck": 70,
                 "def": 35,
                 "res": 20
-            }
+            },
+            "partners": ["robin", "sully"]
         },
         "robin": {
             "growths":{
@@ -22,7 +23,8 @@
                 "lck": 55,
                 "def": 30,
                 "res": 20
-            }
+            },
+            "partners": ["chrom", "sully"]
         },
         "sully": {
             "growths":{
@@ -34,7 +36,8 @@
                 "lck": 60,
                 "def": 35,
                 "res": 20
-            }
+            },
+            "partners": ["robin", "chrom"]
         }
     },
     "gen2": {
