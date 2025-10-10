@@ -18,20 +18,25 @@ result = {
 }
 
 def ChildPrompt():
-    child = input("Choose a child unit: ")
+    print("\n----------------------------------------\n")
+    child = input("Choose a child unit:\n\n")
+    print("\n----------------------------------------\n")
     running = True
     while running:
         if child not in data["gen2"]:
-            child = input(child + " is not a child unit, please try again: ")
+            child = input(child + " is not a child unit, please try again:\n\n")
+            print("\n----------------------------------------\n")
         else:
             child = data["gen2"][child]
             running = False
     parent1 = data["gen1"][child["parent"]]
-    parent2 = input("Choose a parent: ")
+    parent2 = input("Choose a parent:\n\n")
+    print("\n----------------------------------------\n")
     running = True
     while running:
         if parent2 not in parent1["partners"]:
-            parent2 = input(parent2 + " is not a compatible parent, please try again: ")
+            parent2 = input(parent2 + " is not a compatible parent, please try again:\n\n")
+            print("\n----------------------------------------\n")
         else:
             parent2 = data["gen1"][parent2]
             running = False
@@ -41,11 +46,13 @@ def ChildPrompt():
     elif parent2 == data["gen1"]["robin"]:
         parent2["growths"] = robin_prompt.RobinPrompt(parent2["growths"])
     
-    child_class = input("Choose the child unit's class: ")
+    child_class = input("Choose the child unit's class:\n\n")
+    print("\n----------------------------------------\n")
     running = True
     while running:
         if child_class not in child["classes"]:
-            child_class = input(child_class + " is not a compatible class, please try again: ")
+            child_class = input(child_class + " is not a compatible class, please try again:\n\n")
+            print("\n----------------------------------------\n")
         else:
             running = False
     
@@ -54,5 +61,7 @@ def ChildPrompt():
 
 ChildPrompt()
 
+print("Growth rates:\n")
 for stat in result:
     print(stat + ": " + str(math.floor(result[stat])))
+print("\n----------------------------------------\n")
