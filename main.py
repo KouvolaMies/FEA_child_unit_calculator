@@ -30,6 +30,12 @@ def ChildPrompt():
         parent2["growths"] = robin_prompt.RobinPrompt(parent2["growths"])
     
     child_class = input("Choose the child unit's class:\n")
+    running = True
+    while running:
+        if child_class not in child["classes"]:
+            child_class = input("Please choose a compatible class:\n")
+        else:
+            running = False
     
     for stat in result:
         result[stat] = ((child["growths"][stat] + parent1["growths"][stat] + parent2["growths"][stat]) / 3) + data["classes"][child_class]["growths"][stat]
