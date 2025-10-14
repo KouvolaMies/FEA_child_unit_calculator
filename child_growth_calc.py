@@ -59,5 +59,5 @@ def ChildPrompt():
     
     print(child_name.capitalize() + "'s growth rates:\n")
     for stat in result:
-        print(stat + ": " + str(math.floor(result[stat])))
+        print(stat + ": " + str(math.floor(result[stat])) + "%")
     print("\n----------------------------------------\n")
