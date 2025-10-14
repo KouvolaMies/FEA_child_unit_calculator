@@ -1,5 +1,5 @@
 def RobinPrompt(robin):
-    asset = input("choose robin's asset: | 1: HP |  2: STR | 3: MAG | 4: SKL | 5: SPD | 6: LCK | 7: DEF | 8: RES |\n\n")
+    asset = input("Choose Robin's asset: | 1: HP |  2: STR | 3: MAG | 4: SKL | 5: SPD | 6: LCK | 7: DEF | 8: RES |\n\n")
     print("\n----------------------------------------\n")
     running = True
     while running:
@@ -44,15 +44,15 @@ def RobinPrompt(robin):
             robin["mag"] += 5
             running = False
         else:
-            asset = input("please choose a number between 1 and 8: | 1: HP |  2: STR | 3: MAG | 4: SKL | 5: SPD | 6: LCK | 7: DEF | 8: RES |\n\n")
+            asset = input("Please choose a number between 1 and 8: | 1: HP |  2: STR | 3: MAG | 4: SKL | 5: SPD | 6: LCK | 7: DEF | 8: RES |\n\n")
             print("\n----------------------------------------\n")
     
-    flaw = input("choose robin's flaw: | 1: HP |  2: STR | 3: MAG | 4: SKL | 5: SPD | 6: LCK | 7: DEF | 8: RES |\n\n")
+    flaw = input("Choose Robin's flaw: | 1: HP |  2: STR | 3: MAG | 4: SKL | 5: SPD | 6: LCK | 7: DEF | 8: RES |\n\n")
     print("\n----------------------------------------\n")
     running = True
     while running:
         if flaw == asset:
-            flaw = input("asset and flaw cannot be the same: | 1: HP |  2: STR | 3: MAG | 4: SKL | 5: SPD | 6: LCK | 7: DEF | 8: RES |\n\n")
+            flaw = input("Asset and flaw cannot be the same: | 1: HP |  2: STR | 3: MAG | 4: SKL | 5: SPD | 6: LCK | 7: DEF | 8: RES |\n\n")
             print("\n----------------------------------------\n")
         elif flaw == "1":
             robin["hp"] -= 20
@@ -95,6 +95,6 @@ def RobinPrompt(robin):
             robin["mag"] -= 5
             running = False
         else:
-            flaw = input("please choose a number between 1 and 8: | 1: HP |  2: STR | 3: MAG | 4: SKL | 5: SPD | 6: LCK | 7: DEF | 8: RES |\n\n")
+            flaw = input("Please choose a number between 1 and 8: | 1: HP |  2: STR | 3: MAG | 4: SKL | 5: SPD | 6: LCK | 7: DEF | 8: RES |\n\n")
             print("\n----------------------------------------\n")
     return robin
